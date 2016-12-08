@@ -1,0 +1,53 @@
+group 'io.soulsdk'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex:rxjava-computation-expressions:0.21.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+    compile 'com.squareup.okhttp3:mockwebserver:3.0.1'
+
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.google.dexmaker:dexmaker:1.2'
+
+    testCompile "org.powermock:powermock-module-junit4:1.6.4"
+    testCompile "org.powermock:powermock-api-mockito:1.6.4"
+
+    compile group: 'com.pubnub', name: 'pubnub', version: '4.2.0'
+
+    // compile 'com.joshdholtz.sentry:sentry-android:1.4.4'
+    // compile 'com.github.kitttn:apache-common-codec:1.10.1'
+
+    compile group: 'com.madgag.spongycastle', name: 'core', version: '1.54.0.0'
+    compile group: 'com.madgag.spongycastle', name: 'prov', version: '1.54.0.0'
+}
